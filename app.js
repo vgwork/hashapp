@@ -243,21 +243,7 @@ request(requestSettings, (err, resp, buffer) => {
 // })
 
 
-const http = require('http');
-
-const hostname = '192.168.88.209';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(hashArray));
-});
-
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+var port = process.env.PORT || 8080;
 
 
 
