@@ -145,7 +145,7 @@ request(requestSettings, (err, resp, buffer) => {
 app.get('/', function(req, res) {
 
     // ejs render automatically looks in the views folder
-    res.send(hashArray);
+    res.send("hashArray");
 });
 
 
