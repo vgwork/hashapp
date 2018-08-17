@@ -57,6 +57,9 @@ var fs = require('fs');
 var crypto = require('crypto');
 var getImageUrls = require('get-image-urls');
 const hasha = require('hasha');
+var express = require('express');
+var app = express();
+
 
 
 
@@ -139,6 +142,11 @@ request(requestSettings, (err, resp, buffer) => {
 		}
 		return hash
 	}
+app.get('/', function(req, res) {
+
+    // ejs render automatically looks in the views folder
+    res.send(hashArray);
+});
 
 
 
