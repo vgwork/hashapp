@@ -57,8 +57,8 @@ var fs = require('fs');
 var crypto = require('crypto');
 var getImageUrls = require('get-image-urls');
 const hasha = require('hasha');
-var express = require("express");
-var app = express();
+
+
 
 
 
@@ -254,9 +254,6 @@ const server = http.createServer((req, res) => {
   res.end(JSON.stringify(hashArray));
 });
 
-app.get("/", function(req, res){
-	res.send(hashArray)
-})
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
