@@ -252,6 +252,12 @@ app.get('/', function(req, res) {
 
 
 var port = process.env.PORT || 8080;
+const http = require('http');
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(hashArray));
+});
 
-
+server.listen(process.env.PORT || port)
 
