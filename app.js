@@ -145,7 +145,7 @@ request(requestSettings, (err, resp, buffer) => {
 app.get('/', function(req, res) {
 
     // ejs render automatically looks in the views folder
-    res.send("hashArray");
+    res.send(hashArray);
 });
 
 
@@ -255,7 +255,7 @@ var port = process.env.PORT || 8080;
 const http = require('http');
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'text/plain');
   res.end(JSON.stringify(hashArray));
 });
 
