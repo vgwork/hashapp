@@ -142,11 +142,20 @@ request(requestSettings, (err, resp, buffer) => {
 		}
 		return hash
 	}
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+	
 app.get('/', function(req, res) {
 
     // ejs render automatically looks in the views folder
     res.send(hashArray);
 });
+
+
 
 
 
