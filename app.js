@@ -50,12 +50,9 @@
 
 "use strict"
 require('use-strict')
-var JSSoup = require('jssoup').default;
 var request = require('request');
 var file = require('file-system');
 var fs = require('fs');
-var crypto = require('crypto');
-var getImageUrls = require('get-image-urls');
 const hasha = require('hasha');
 var express = require('express');
 var app = express();
@@ -150,8 +147,6 @@ app.use(function(req, res, next) {
 });
 	
 app.get('/', function(req, res) {
-
-    // ejs render automatically looks in the views folder
     res.send(hashArray);
 });
 
