@@ -63,6 +63,8 @@ var app = express();
 
 
 let hashArray = []
+hashArray.push(Math.trunc(Date.now() / 100000000))
+
 	for(let i = 0; i <= 4200; i+=42){
 		
 		let link = "https://gelbooru.com/index.php?page=post&s=list&tags=rating:safe&pid=" + i
